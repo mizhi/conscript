@@ -15,7 +15,7 @@ echo "
 [boot]
   directory: $CS/boot" >> $CLC
 
-BIN=$HOME/bin
+BIN=${CONSCRIPT_BIN_PREFIX:-$HOME}/bin
 mkdir -p $BIN
 
 echo "#!/bin/sh
