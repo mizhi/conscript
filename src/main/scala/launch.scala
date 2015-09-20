@@ -50,6 +50,7 @@ trait Launch extends Credentials {
       "/" + (a replaceAll ("""\\""", """/"""))
     } getOrElse {a}
   def configdir(path: String) = homedir(".conscript" / path)
+  def binprefix = sys.env.getOrElse("CONSCRIPT_BIN_PREFIX", "")
   def homedir(path: String) = new File(System.getProperty("user.home"), path)
   def mkdir(file: File) =
     catching(classOf[SecurityException]).either {
